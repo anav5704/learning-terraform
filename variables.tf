@@ -1,10 +1,39 @@
 variable "compartment_id" {
-    description = "OCID from your tenancy page"
-    type        = string
+  description = "OCI tenancy OCID"
+  type        = string
 }
 
 variable "region" {
-    description = "region where you have OCI tenancy"
-    type        = string
+  description = "OCI tenancy region"
+  type        = string
 }
 
+variable "image_shape" {
+  description = "VM instance shape"
+  type        = string
+}
+
+variable "availability_domain" {
+  description = "VM instance AD"
+  type        = string
+
+}
+
+variable "fault_domain" {
+  description = "VM instance FD"
+  type        = string
+}
+
+variable "subnet_id" {
+  description = "VM instance subnet ID"
+  type        = string
+}
+
+variable "image_id" {
+  description = "VM instance image ID"
+  type        = string
+}
+
+locals {
+  ssh_key = file("~/.ssh/learning-terraform/key.pub")
+}
